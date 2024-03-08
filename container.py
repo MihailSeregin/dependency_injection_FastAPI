@@ -8,10 +8,9 @@ class Container(containers.DeclarativeContainer):
 
     config = providers.Configuration()
 
-    value_provider = providers.Singleton(ValueProvider, quantity=2)
-
-    sorter_values = providers.Singleton(SorterValues, 5)
-    substractor = providers.Singleton(Substractor, substractor_digit=2)
+    value_provider = providers.Singleton(ValueProvider, quantity=config.value_provider.quantity)
+    sorter_values = providers.Singleton(SorterValues, limit=config.sorters.limit)
+    substractor = providers.Singleton(Substractor, substractor_digit=config.sorters.substractor_digit)
 
     pipeline = providers.Factory(
         Pipeline,
@@ -21,3 +20,4 @@ class Container(containers.DeclarativeContainer):
 
     
 
+ 

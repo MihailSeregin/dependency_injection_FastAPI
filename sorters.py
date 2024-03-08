@@ -1,12 +1,12 @@
 from value_provider import ValueProvider
 
 class SorterValues:
-    def __init__(self, init_param):
-        self.init_param = init_param
+    def __init__(self, limit):
+        self.limit = limit
 
     def sort_values(self, lst: list[int]):
         lst.sort()
-        return lst
+        return lst[:self.limit]
 
 
 class Substractor:

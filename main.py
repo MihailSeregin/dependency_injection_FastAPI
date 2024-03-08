@@ -3,9 +3,6 @@ from container import Container
 import endpoints
 
 
-# print(endpoints.router)
-
-
 def create_app() -> FastAPI:
     container = Container()
     container.config.from_yaml("./config.yml")
@@ -17,10 +14,3 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
-
-
-if __name__=='__main__':
-    container = Container()
-    container.service().print()
-    # container.wire(modules=[])
-    print_param()

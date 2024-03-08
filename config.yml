@@ -1,2 +1,5 @@
 sorters:
   limit: 5
+  substractor_digit: 2
+value_provider:
+  quantity: 3
